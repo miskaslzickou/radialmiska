@@ -141,9 +141,30 @@ lib.registerRadial({
             icon = "chair",
             label = "Řidič",
             onSelect = function ()
-                
+                changeSeat(0)
             end
-        }
+        },
+        {
+            icon = "chair",
+            label = "Spolujezdec",
+            onSelect = function ()
+                changeSeat(1)
+            end
+        },
+        {
+            icon = "chair",
+            label = "Levé zadní",
+            onSelect = function ()
+                changeSeat(2)
+            end
+        },
+        {
+            icon = "chair",
+            label = "Pravé zadní",
+            onSelect = function ()
+                changeSeat(3)
+            end
+        },
     }
  })
 
@@ -152,14 +173,14 @@ function ToggleEngine()
     if GetIsVehicleEngineRunning(vehicle) then
         SetVehicleEngineOn(
 	 vehicle--[[ Vehicle ]], 
-	true --[[ boolean ]], 
+	false --[[ boolean ]], 
 	false --[[ boolean ]], 
 	true--[[ boolean ]]
 )
 else
     SetVehicleEngineOn(
         vehicle--[[ Vehicle ]], 
-       false --[[ boolean ]], 
+       true --[[ boolean ]], 
        false --[[ boolean ]], 
        true--[[ boolean ]]
    )
